@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import '../features/validation.dart';
+import '../features/validation/email_valid.dart';
 import '../const.dart';
 
-class MyInputPage extends StatefulWidget {
+class EmailValidWidget extends StatefulWidget {
   @override
-  _MyInputPageState createState() => _MyInputPageState();
+  _EmailValidWidget createState() => _EmailValidWidget();
 }
 
-class _MyInputPageState extends State<MyInputPage> {
+class _EmailValidWidget extends State<EmailValidWidget> {
   String inputValue = ''; // Variable to store the input field value
   String validationMessage = ''; // Message for email validity
   Color validationColor = Colors.black; // Text color for the validation message
 
   void _validateEmail() {
-    EmailValidatorService.validateEmail(
+    EmailValid.validateEmail(
       inputValue: inputValue,
       onValidation: (message, color) {
         setState(() {
@@ -25,38 +25,29 @@ class _MyInputPageState extends State<MyInputPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Input Example'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
+  Widget build(BuildContext context) => Material(
+    child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             TextField(
               onChanged: (value) {
                 setState(() {
                   inputValue = value; // Update the variable when the text changes
+                  _validateEmail();
                 });
               },
-              onSubmitted: (value) {
-                _validateEmail(); // Call the validation function when the user submits the text
-              },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: enterEmailLabelText,
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             Text(
               validationMessage,
-              style: TextStyle(fontSize: 18.0, color: validationColor), // Set the text color
+              style: TextStyle(
+                  fontSize: 18.0, color: validationColor), // Set the text color
             ),
           ],
         ),
-      ),
-    );
-  }
+  );
 }

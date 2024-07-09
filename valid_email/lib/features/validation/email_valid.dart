@@ -1,8 +1,8 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import '../const.dart';
+import '../../const.dart';
 
-class EmailValidatorService {
+class  EmailValid{
   // Function to check email validity
   static void validateEmail({
     required String inputValue,

@@ -1,6 +1,18 @@
-const String enterEmailLabelText = 'Enter your e-mail';
-const String validEmailMessage = 'Valid email';
-const String invalidEmailMessage = 'Invalid email';
-const String enterYourEmailMessage = 'Please enter your email';
-const String mustContainAtSign = 'You email must contain @ sign';
-const String invalidCharacters = 'Email contains invalid characters';
+const appTitle = 'Flutter Input Example';
+const inputExampleScreenTitle = 'Input Example';
+
+//email const
+const enterEmailLabelText = 'Enter your e-mail';
+const validEmailMessage = 'Valid email';
+const invalidEmailMessage = 'Invalid email';
+const enterYourEmailMessage = 'Please enter your email';
+const mustContainAtSign = 'You email must contain @ sign';
+const invalidCharacters = 'Email contains invalid characters';
+
+//phone const
+const enterPhoneLabelText = 'Enter your phone number';
+const validPhoneMessage = 'Valid phone number';
+const invalidPhoneMessage = 'Invalid phone number';
+const String mustContainPlusSign = 'Phone number must contain "+"';
+const String tooLongNumber = 'Phone number is too long';
+const String tooShortNumber = 'Phone number is too short';
