@@ -6,7 +6,7 @@ class PhoneValidWidget extends StatefulWidget {
   const PhoneValidWidget({super.key});
 
   @override
-  State<PhoneValidWidget> createState() => _PhoneValidWidgetState();
+  _PhoneValidWidgetState createState() => _PhoneValidWidgetState();
 }
 
 class _PhoneValidWidgetState extends State<PhoneValidWidget> {
@@ -38,41 +38,46 @@ class _PhoneValidWidgetState extends State<PhoneValidWidget> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: 300,
-                  child: TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        inputValue = value; // Update the variable when the text changes
-                        _validatePhone();
-                      });
-                    },
-                    decoration: const InputDecoration(
-                      labelText: enterPhoneLabelText,
-                      border: OutlineInputBorder(),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 8.0), // Add some spacing
+                    child: TextField(
+                      onChanged: (value) {
+                        setState(() {
+                          inputValue = value; // Update the variable when the text changes
+                          _validatePhone();
+                        });
+                      },
+                      decoration: const InputDecoration(
+                        labelText: enterPhoneLabelText,
+                        border: OutlineInputBorder(),
+                      ),
                     ),
                   ),
                 ),
-                if (isWideScreen) ...[
-                  const SizedBox(width: 10),
+                if (isWideScreen)
                   Expanded(
                     child: Text(
                       validationMessage,
                       style: TextStyle(
-                          fontSize: 18.0, color: validationColor), // Set the text color
+                        fontSize: 18.0,
+                        color: validationColor,
+                      ),
                     ),
                   ),
-                ],
               ],
             ),
-            if (!isWideScreen) ...[
-              const SizedBox(height: 10.0),
-              Text(
-                validationMessage,
-                style: TextStyle(
-                    fontSize: 18.0, color: validationColor), // Set the text color
+            if (!isWideScreen) // Show validation message below TextField on narrow screens
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Text(
+                  validationMessage,
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    color: validationColor,
+                  ),
+                ),
               ),
-            ],
           ],
         );
       },
