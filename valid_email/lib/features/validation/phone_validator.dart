@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../const.dart';
+import 'package:valid_email/error_color.dart';
 
 class PhoneValid {
   static void validatePhone({
@@ -12,18 +13,22 @@ class PhoneValid {
     const int minPhoneNumberLength = 12;
     const int maxPhoneNumberLength = 15;
 
+    String message;
     if (inputValue.isEmpty) {
-      onValidation(enterPhoneLabelText, Colors.orange);
+      message = enterPhoneLabelText;
     } else if (!inputValue.contains('+')) {
-      onValidation(mustContainPlusSign, Colors.orange);
+      message = mustContainPlusSign;
     } else if (inputValue.length > maxPhoneNumberLength) {
-      onValidation(tooLongNumber, Colors.orange);
+      message = tooLongNumber;
     } else if (inputValue.length < minPhoneNumberLength) {
-      onValidation(tooShortNumber, Colors.orange);
+      message = tooShortNumber;
     } else if (!pattern.hasMatch(inputValue)) {
-      onValidation(invalidPhoneMessage, Colors.red);
+      message = invalidPhoneMessage;
     } else {
-      onValidation(validPhoneMessage, Colors.green);
+      message = validPhoneMessage;
     }
+
+    Color color = getValidationColor(message);
+    onValidation(message, color);
   }
 }

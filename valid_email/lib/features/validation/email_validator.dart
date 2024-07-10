@@ -1,24 +1,28 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import '../../const.dart';
+import 'package:valid_email/error_color.dart';
 
-class  EmailValid{
+class EmailValid {
   // Function to check email validity
   static void validateEmail({
     required String inputValue,
     required void Function(String, Color) onValidation,
   }) {
+    String message;
     if (inputValue.isEmpty) {
-      onValidation(enterYourEmailMessage, Colors.orange);
+      message = enterYourEmailMessage;
     } else if (!inputValue.contains('@')) {
-      onValidation(mustContainAtSign, Colors.orange);
-    }
-    else if (RegExp(r'[+\-*/"]').hasMatch(inputValue)) {
-      onValidation(invalidCharacters, Colors.orange);
+      message = mustContainAtSign;
+    } else if (RegExp(r'[+\-*/]').hasMatch(inputValue)) {
+      message = invalidCharacters;
     } else if (EmailValidator.validate(inputValue)) {
-      onValidation(validEmailMessage, Colors.green);
+      message = validEmailMessage;
     } else {
-      onValidation(invalidEmailMessage, Colors.red);
+      message = invalidEmailMessage;
     }
+
+    Color color = getValidationColor(message);
+    onValidation(message, color);
   }
 }
