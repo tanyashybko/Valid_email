@@ -3,7 +3,7 @@ import '../features/validation/email_validator.dart';
 import '../const.dart';
 
 class EmailValidWidget extends StatefulWidget {
-  const EmailValidWidget({super.key});
+  const EmailValidWidget({Key? key}) : super(key: key);
 
   @override
   _EmailValidWidgetState createState() => _EmailValidWidgetState();

@@ -3,7 +3,7 @@ import '../features/validation/phone_validator.dart';
 import '../const.dart';
 
 class PhoneValidWidget extends StatefulWidget {
-  const PhoneValidWidget({super.key});
+  const PhoneValidWidget({Key? key}) : super(key: key);
 
   @override
   _PhoneValidWidgetState createState() => _PhoneValidWidgetState();
