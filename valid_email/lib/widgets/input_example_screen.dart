@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:valid_email/features/validation/base_validator.dart';
 import 'package:valid_email/widgets/common_valid_widget.dart';
 import '../../const.dart';
 import '../features/validation/error_handler.dart';

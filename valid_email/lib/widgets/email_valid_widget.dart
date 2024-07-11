@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:valid_email/features/validation/email_validator.dart';
 import 'package:valid_email/features/validation/error_handler.dart';
 import 'package:valid_email/features/validation/custom_error.dart';
+import 'package:valid_email/features/validation/my_custom_email_validator.dart';
 import '../const.dart';
 
 class EmailValidWidget extends StatefulWidget {
@@ -17,9 +17,10 @@ class _EmailValidWidgetState extends State<EmailValidWidget> {
   Color validationColor = Colors.black; // Text color for the validation message
 
   final ErrorHandler errorHandler = ErrorHandler();
+  final MyCustomEmailValidator validator = MyCustomEmailValidator();
 
   void _validateEmail() {
-    final CustomError? error = EmailValid.validateEmail(inputValue);
+    final CustomError? error = validator.validateEmail(inputValue);
     errorHandler.handle(error, (message, color) {
       setState(() {
         validationMessage = message;
