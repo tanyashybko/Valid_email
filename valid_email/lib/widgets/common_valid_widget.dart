@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:valid_email/features/validation/base_validator.dart';
 import 'package:valid_email/features/validation/error_handler.dart';
-import '../const.dart';
-import '../features/validation/my_custom_email_validator.dart';
 
 class CommonValidWidget extends StatefulWidget {
-  const CommonValidWidget(
-      {required this.validator, required this.errorHandler, super.key});
+  const CommonValidWidget({
+    required this.validator,
+    required this.errorHandler,
+    required this.labelText,
+    required this.keyboardType,
+    super.key,
+  });
+
   final BaseValidator<String> validator;
   final ErrorHandler errorHandler;
+  final String labelText;
+  final TextInputType keyboardType;
 
   @override
   _CommonValidWidgetState createState() => _CommonValidWidgetState();
@@ -31,10 +37,6 @@ class _CommonValidWidgetState extends State<CommonValidWidget> {
 
   @override
   Widget build(BuildContext context) {
-    String labelText = widget.validator is MyCustomEmailValidator
-        ? enterEmailLabelText
-        : enterPhoneLabelText;
-
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         bool isWideScreen = constraints.maxWidth > 600;
@@ -55,8 +57,9 @@ class _CommonValidWidgetState extends State<CommonValidWidget> {
                           _validate();
                         });
                       },
+                      keyboardType: widget.keyboardType,
                       decoration: InputDecoration(
-                        labelText: labelText,
+                        labelText: widget.labelText,
                         border: const OutlineInputBorder(),
                       ),
                     ),
