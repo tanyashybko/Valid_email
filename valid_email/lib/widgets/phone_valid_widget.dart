@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import '../features/validation/phone_validator.dart';
+import 'package:valid_email/features/validation/base_validator.dart';
+import 'package:valid_email/features/validation/error_handler.dart';
+import 'package:valid_email/features/validation/custom_error.dart';
 import '../const.dart';
+import '../features/validation/my_custom_phone_validator.dart';
 
 class PhoneValidWidget extends StatefulWidget {
   const PhoneValidWidget({Key? key}) : super(key: key);
@@ -14,16 +17,17 @@ class _PhoneValidWidgetState extends State<PhoneValidWidget> {
   String validationMessage = ''; // Message for phone validity
   Color validationColor = Colors.black; // Text color for the validation message
 
+  final BaseValidator<String> validator = MyCustomPhoneValidator();
+  final ErrorHandler errorHandler = ErrorHandler();
+
   void _validatePhone() {
-    PhoneValid.validatePhone(
-      inputValue: inputValue,
-      onValidation: (message, color) {
-        setState(() {
-          validationMessage = message;
-          validationColor = color;
-        });
-      },
-    );
+    final CustomError? error = validator.validate(inputValue);
+    errorHandler.handle(error, (message, color) {
+      setState(() {
+        validationMessage = message;
+        validationColor = color;
+      });
+    });
   }
 
   @override

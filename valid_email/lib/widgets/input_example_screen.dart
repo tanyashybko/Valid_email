@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:valid_email/widgets/email_valid_widget.dart';
-import 'package:valid_email/widgets/phone_valid_widget.dart';
+import 'package:valid_email/features/validation/base_validator.dart';
+import 'package:valid_email/widgets/common_valid_widget.dart';
 import '../../const.dart';
+import '../features/validation/error_handler.dart';
+import '../features/validation/my_custom_email_validator.dart';
+import '../features/validation/my_custom_phone_validator.dart';
 
 class InputExampleScreen extends StatelessWidget {
   const InputExampleScreen({super.key});
@@ -13,14 +16,16 @@ class InputExampleScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(inputExampleScreenTitle),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            EmailValidWidget(),
-            SizedBox(height: 20),
-            PhoneValidWidget(),
+            CommonValidWidget(validator: MyCustomEmailValidator(), errorHandler: ErrorHandler()),
+            // EmailValidWidget(),
+            const SizedBox(height: 20),
+            CommonValidWidget(validator: MyCustomPhoneValidator(), errorHandler: ErrorHandler()),
+            // PhoneValidWidget(),
           ],
         ),
       ),

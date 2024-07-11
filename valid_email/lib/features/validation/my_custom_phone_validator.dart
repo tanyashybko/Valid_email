@@ -1,7 +1,7 @@
-import 'base_validator.dart';
-import 'custom_error.dart';
+import 'package:valid_email/features/validation/base_validator.dart';
+import 'package:valid_email/features/validation/custom_error.dart';
 
-class PhoneValid extends BaseValidator<String> {
+class MyCustomPhoneValidator extends BaseValidator<String> {
   @override
   CustomError? validate(String data) {
     final RegExp pattern =
@@ -21,7 +21,6 @@ class PhoneValid extends BaseValidator<String> {
     } else if (!pattern.hasMatch(data)) {
       return PhoneFormatError();
     }
-
     return null;
   }
 }
