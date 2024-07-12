@@ -1,6 +1,6 @@
 # Valid_email
 
-This app can check: is your e-mail valid or not
+This app can check: are your e-mail and phone number valid or not
 
 # Usage
 
@@ -8,6 +8,6 @@ Download the files from the repository. You will also need to install the Androi
 
 Run the program
 
-On the main page you will see the input form. Here you need to write the email you want to check
+On the main page you will see the input form. Here you need to write the email and phone number you want to check
 
-Push on button "Check Email". You will see a message under the button
+You will see a message under the button, if your screen in less than 600 pixels and on the right side, if it's bigger
