@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:valid_email/features/validation/custom_error.dart';
+import 'package:valid_email/const.dart';
 
 class ErrorHandler {
   void handle(
@@ -7,27 +8,27 @@ class ErrorHandler {
       void Function(String message, Color color) callback,
       ) {
     if (error == null) {
-      callback('Valid input', Colors.green);
+      callback(validInput, Colors.green);
     } else if (error is EmailEmptyError) {
-      callback('Please enter your email', Colors.orange);
+      callback(enterEmailLabelText, Colors.orange);
     } else if (error is EmailAtSign) {
-      callback('Your email must contain @ sign', Colors.orange);
+      callback(mustContainAtSign, Colors.orange);
     } else if (error is InvalidCharacters) {
-      callback('Invalid characters in input', Colors.orange);
+      callback(invalidCharacters, Colors.orange);
     } else if (error is EmailFormatError) {
-      callback('Invalid email format', Colors.red);
+      callback(invalidEmailMessage, Colors.red);
     } else if (error is PhoneEmptyError) {
-      callback('Please enter your phone number', Colors.orange);
+      callback(enterPhoneLabelText, Colors.orange);
     } else if (error is PhonePlusSign) {
-      callback('Phone number must contain "+"', Colors.orange);
+      callback(mustContainPlusSign, Colors.orange);
     } else if (error is PhoneLongNumber) {
-      callback('Phone number is too long', Colors.orange);
+      callback(tooLongNumber, Colors.orange);
     } else if (error is PhoneShortNumber) {
-      callback('Phone number is too short', Colors.orange);
+      callback(tooShortNumber , Colors.orange);
     } else if (error is PhoneFormatError) {
-      callback('Invalid phone number format', Colors.red);
+      callback(invalidPhoneMessage, Colors.red);
     } else {
-      callback('Unexpected error', Colors.red);
+      callback(unexpectedError, Colors.red);
     }
   }
 }
