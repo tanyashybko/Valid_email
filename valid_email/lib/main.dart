@@ -3,13 +3,15 @@ import 'package:valid_email/widgets/input_example_screen.dart';
 import '../../const.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: appTitle,
       home: InputExampleScreen(),
     );

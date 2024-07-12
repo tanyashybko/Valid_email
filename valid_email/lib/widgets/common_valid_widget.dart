@@ -17,7 +17,7 @@ class CommonValidWidget extends StatefulWidget {
   final TextInputType keyboardType;
 
   @override
-  _CommonValidWidgetState createState() => _CommonValidWidgetState();
+  State<CommonValidWidget> createState() => _CommonValidWidgetState();
 }
 
 class _CommonValidWidgetState extends State<CommonValidWidget> {
