@@ -1,0 +1,19 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Пример ввода Flutter",
+  "inputExampleScreenTitle": "Пример ввода",
+  "validInput": "Правильный ввод",
+  "invalidCharacters": "Недопустимые символы вводимых данных",
+  "unexpectedError": "Неожиданная ошибка",
+
+  "enterEmailLabelText": "Введите свой e-mail",
+  "invalidEmailMessage": "Неверный email",
+  "enterYourEmailMessage": "Пожалуйста, введите свой email",
+  "mustContainAtSign": "Ваш e-mail должен содержать знак @",
+
+  "enterPhoneLabelText": "Введите свой номер телефона",
+  "invalidPhoneMessage": "Неверный номер телефона",
+  "mustContainPlusSign": "Номер телефона должен содержать \"+\"",
+  "tooLongNumber": "Слишком длинный телефонный номер",
+  "tooShortNumber": "Слишком короткий телефонный номер"
+}

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:valid_email/features/validation/error_handler.dart';
+import 'package:valid_email/l10n/l10n.dart';
 import '../features/validation/my_custom_email_validator.dart';
 import 'common_valid_widget.dart';
-import '../const.dart';
 
 class EmailValidWidget extends StatelessWidget {
   const EmailValidWidget({super.key});
@@ -11,7 +11,7 @@ class EmailValidWidget extends StatelessWidget {
   Widget build(BuildContext context) => CommonValidWidget(
     validator: MyCustomEmailValidator(),
     errorHandler: ErrorHandler(),
-    labelText: enterEmailLabelText,
+    labelText: context.l10n.enterEmailLabelText,
     keyboardType: TextInputType.emailAddress,
   );
 }
