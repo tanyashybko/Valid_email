@@ -20,3 +20,10 @@ const invalidPhoneMessage = 'Invalid phone number';
 const mustContainPlusSign = 'Phone number must contain "+"';
 const tooLongNumber = 'Phone number is too long';
 const tooShortNumber = 'Phone number is too short';
+
+//layouts
+const layoutTitle = 'Two layouts';
+const firstWidget = 'The first widget';
+const secondWidget = 'The second widget';
+const thirdWidget = 'The third widget';
+const layoutPage = 'Open the second page';

@@ -16,14 +16,21 @@ class InputExampleScreen extends StatelessWidget {
           LanguageSwitcher(),
         ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            EmailValidWidget(),
-            SizedBox(height: 20),
-            PhoneValidWidget(),
+            const EmailValidWidget(),
+            const SizedBox(height: 20),
+            const PhoneValidWidget(),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/second');
+              },
+              child: Text(context.l10n.layoutPage),
+            ),
           ],
         ),
       ),
