@@ -7,11 +7,6 @@ extension AppLocalizationsX on BuildContext {
 }
 
 class L10n {
-  static final all = [
-    const Locale('en', 'US'),
-    const Locale('ru', 'RU'),
-  ];
-
   static String getFlag(String code) {
     switch (code) {
       case 'en':

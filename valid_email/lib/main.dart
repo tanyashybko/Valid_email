@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:valid_email/l10n/l10n.dart';
 import 'package:valid_email/localization/locale_provider.dart';
@@ -20,13 +19,8 @@ class MyApp extends StatelessWidget {
         builder: (context, provider, child) {
           return MaterialApp(
             locale: provider.locale,
-            supportedLocales: L10n.all,
-            localizationsDelegates: const [
-              AppLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
             home: const InputExampleScreen(),
           );
         },
