@@ -1,0 +1,19 @@
+{
+  "@@locale": "en",
+  "appTitle": "Flutter Input Example",
+  "inputExampleScreenTitle": "Input Example",
+  "validInput": "Valid input",
+  "invalidCharacters": "Invalid characters in input",
+  "unexpectedError": "Unexpected error",
+
+  "enterEmailLabelText": "Enter your e-mail",
+  "invalidEmailMessage": "Invalid email",
+  "enterYourEmailMessage": "Please enter your email",
+  "mustContainAtSign": "You email must contain @ sign",
+
+  "enterPhoneLabelText": "Enter your phone number",
+  "invalidPhoneMessage": "Invalid phone number",
+  "mustContainPlusSign": "Phone number must contain \"+\"",
+  "tooLongNumber": "Phone number is too long",
+  "tooShortNumber": "Phone number is too short"
+}

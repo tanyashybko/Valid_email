@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:valid_email/features/validation/base_validator.dart';
 import 'package:valid_email/features/validation/error_handler.dart';
+import 'package:valid_email/l10n/l10n.dart';
 
 class CommonValidWidget extends StatefulWidget {
   const CommonValidWidget({
@@ -32,7 +33,10 @@ class _CommonValidWidgetState extends State<CommonValidWidget> {
         validationMessage = message;
         validationColor = color;
       });
-    });
+    },
+      context.l10n,
+      context,
+    );
   }
 
   @override
