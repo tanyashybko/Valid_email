@@ -15,11 +15,17 @@ class CustomLayoutWidget extends StatelessWidget {
     return Container(
       color: color,
       child: Center(
-        child: SingleChildScrollView(
-          child: Text(
-            text,
-            style: const TextStyle(fontSize: 20, color: Colors.white),
-            textAlign: TextAlign.center,
+        child: Scrollbar(
+          thumbVisibility: true,
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                text,
+                style: const TextStyle(fontSize: 20, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
         ),
       ),
