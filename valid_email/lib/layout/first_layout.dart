@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:valid_email/l10n/l10n.dart';
+import '../widgets/custom_layout_widget.dart';
+
 
 class FirstLayout extends StatelessWidget {
   const FirstLayout({super.key});
@@ -9,43 +11,31 @@ class FirstLayout extends StatelessWidget {
     return Container(
       color: Colors.grey[300],
       height: 250,
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: Container(
+            child: CustomLayoutWidget(
               color: Colors.grey,
-              child: Center(
-                child: Text(
-                  context.l10n.firstWidget,
-                  style: const TextStyle(fontSize: 20, color: Colors.white),
-                ),
-              ),
+              text: context.l10n.firstWidget,
             ),
           ),
+          const SizedBox(height: 8.0),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
-                    color: Colors.grey[400],
-                    child: Center(
-                      child: Text(
-                        context.l10n.secondWidget,
-                        style: const TextStyle(fontSize: 20, color: Colors.white),
-                      ),
-                    ),
+                  child: CustomLayoutWidget(
+                    color: Colors.grey[400]!,
+                    text: context.l10n.secondWidget,
                   ),
                 ),
+                const SizedBox(width: 8.0),
                 Expanded(
-                  child: Container(
-                    color: Colors.grey[500],
-                    child: Center(
-                      child: Text(
-                        context.l10n.thirdWidget,
-                        style: const TextStyle(fontSize: 20, color: Colors.white),
-                      ),
-                    ),
+                  child: CustomLayoutWidget(
+                    color: Colors.grey[500]!,
+                    text: context.l10n.thirdWidget,
                   ),
                 ),
               ],

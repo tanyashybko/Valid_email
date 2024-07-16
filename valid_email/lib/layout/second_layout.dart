@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:valid_email/l10n/l10n.dart';
+import '../widgets/custom_layout_widget.dart';
 
 class SecondLayout extends StatelessWidget {
   const SecondLayout({super.key});
@@ -9,45 +10,33 @@ class SecondLayout extends StatelessWidget {
     return Container(
       color: Colors.grey[800],
       height: 250,
+      padding: const EdgeInsets.all(8.0),
       child: Row(
         children: [
           Expanded(
             child: Column(
               children: [
                 Expanded(
-                  child: Container(
-                    color: Colors.grey[700],
-                    child: Center(
-                      child: Text(
-                        context.l10n.firstWidget,
-                        style: const TextStyle(fontSize: 20, color: Colors.white),
-                      ),
-                    ),
+                  child: CustomLayoutWidget(
+                    color: Colors.grey[700]!,
+                    text: context.l10n.firstWidget,
                   ),
                 ),
+                const SizedBox(height: 8.0),
                 Expanded(
-                  child: Container(
-                    color: Colors.grey[600],
-                    child: Center(
-                      child: Text(
-                        context.l10n.secondWidget,
-                        style: const TextStyle(fontSize: 20, color: Colors.white),
-                      ),
-                    ),
+                  child: CustomLayoutWidget(
+                    color: Colors.grey[600]!,
+                    text: context.l10n.secondWidget,
                   ),
                 ),
               ],
             ),
           ),
+          const SizedBox(width: 8.0),
           Expanded(
-            child: Container(
-              color: Colors.grey[500],
-              child: Center(
-                child: Text(
-                  context.l10n.thirdWidget,
-                  style: const TextStyle(fontSize: 20, color: Colors.white),
-                ),
-              ),
+            child: CustomLayoutWidget(
+              color: Colors.grey[500]!,
+              text: context.l10n.thirdWidget,
             ),
           ),
         ],
