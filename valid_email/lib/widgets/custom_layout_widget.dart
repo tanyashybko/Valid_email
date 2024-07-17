@@ -12,8 +12,11 @@ class CustomLayoutWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: color,
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: color,
+      ),
       child: Center(
         child: Scrollbar(
           thumbVisibility: true,
