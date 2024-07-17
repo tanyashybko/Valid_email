@@ -7,6 +7,7 @@ class SecondLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -23,14 +24,14 @@ class SecondLayout extends StatelessWidget {
                     Expanded(
                       child: CustomLayoutWidget(
                         color: Colors.grey[700]!,
-                        text: context.l10n.firstWidget,
+                        text: l10n.firstWidget,
                       ),
                     ),
                     const SizedBox(height: 8.0),
                     Expanded(
                       child: CustomLayoutWidget(
                         color: Colors.grey[600]!,
-                        text: context.l10n.secondWidget,
+                        text: l10n.secondWidget,
                       ),
                     ),
                   ],
@@ -40,7 +41,7 @@ class SecondLayout extends StatelessWidget {
               Expanded(
                 child: CustomLayoutWidget(
                   color: Colors.grey[500]!,
-                  text: context.l10n.thirdWidget,
+                  text: l10n.thirdWidget,
                 ),
               ),
             ],
