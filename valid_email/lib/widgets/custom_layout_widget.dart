@@ -12,14 +12,23 @@ class CustomLayoutWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: color,
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: color,
+      ),
       child: Center(
-        child: SingleChildScrollView(
-          child: Text(
-            text,
-            style: const TextStyle(fontSize: 20, color: Colors.white),
-            textAlign: TextAlign.center,
+        child: Scrollbar(
+          thumbVisibility: true,
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                text,
+                style: const TextStyle(fontSize: 20, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
         ),
       ),
