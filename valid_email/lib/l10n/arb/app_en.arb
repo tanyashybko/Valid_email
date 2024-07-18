@@ -18,11 +18,8 @@
   "tooShortNumber": "Phone number is too short",
 
   "layoutTitle": "Two layouts",
-  "largeSmallTitle": "The third layout",
   "firstWidget": "The first widget",
   "secondWidget": "The second widget",
-  "thirdWidget": "1:1234567890\n2:1234567890\n3:1234567890\n4:1234567890\n5:1234567890\n6:1234567890\n7:1234567890\n8:1234567890\n9:1234567890\n10:1234567890",
-  "fourthWidget": "The fourth widget",
-  "layoutPage": "Open the second page",
-  "layoutThirdPage": "Open the third page"
+  "thirdWidget": "The third widget",
+  "layoutPage": "Open the second page"
 }
