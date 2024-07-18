@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:valid_email/l10n/l10n.dart';
+import 'package:valid_email/layout/large_small_layout.dart';
 import 'package:valid_email/localization/locale_provider.dart';
 import 'package:valid_email/widgets/input_example_screen.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
             routes: {
               '/': (context) => const InputExampleScreen(),
               '/second': (context) => const LayoutScreen(),
+              '/third': (context) => const LargeSmallLayout(),
             },
           );
         },

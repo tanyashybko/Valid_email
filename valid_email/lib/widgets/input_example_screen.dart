@@ -9,6 +9,7 @@ class InputExampleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(
         title: Text(context.l10n.inputExampleScreenTitle),
@@ -29,7 +30,14 @@ class InputExampleScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/second');
               },
-              child: Text(context.l10n.layoutPage),
+              child: Text(l10n.layoutPage),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/third');
+              },
+              child: Text(l10n.layoutThirdPage),
             ),
           ],
         ),
