@@ -39,20 +39,6 @@ class InputExampleScreen extends StatelessWidget {
               },
               child: Text(l10n.layoutThirdPage),
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/fourth');
-              },
-              child: Text(l10n.layoutFourthPage),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/fifth');
-              },
-              child: Text(l10n.layoutFifthPage),
-            ),
           ],
         ),
       ),
