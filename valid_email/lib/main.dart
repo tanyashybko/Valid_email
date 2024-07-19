@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:valid_email/l10n/l10n.dart';
+import 'package:valid_email/layout/large_small_layout.dart';
 import 'package:valid_email/localization/locale_provider.dart';
 import 'package:valid_email/widgets/input_example_screen.dart';
+
+import 'layout/layout_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +24,12 @@ class MyApp extends StatelessWidget {
             locale: provider.locale,
             supportedLocales: AppLocalizations.supportedLocales,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
-            home: const InputExampleScreen(),
+            // home: const InputExampleScreen(),
+            routes: {
+              '/': (context) => const InputExampleScreen(),
+              '/second': (context) => const LayoutScreen(),
+              '/third': (context) => const LargeSmallLayout(),
+            },
           );
         },
       ),

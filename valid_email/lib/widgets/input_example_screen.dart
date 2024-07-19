@@ -9,6 +9,7 @@ class InputExampleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(
         title: Text(context.l10n.inputExampleScreenTitle),
@@ -16,14 +17,28 @@ class InputExampleScreen extends StatelessWidget {
           LanguageSwitcher(),
         ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            EmailValidWidget(),
-            SizedBox(height: 20),
-            PhoneValidWidget(),
+            const EmailValidWidget(),
+            const SizedBox(height: 20),
+            const PhoneValidWidget(),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/second');
+              },
+              child: Text(l10n.layoutPage),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/third');
+              },
+              child: Text(l10n.layoutThirdPage),
+            ),
           ],
         ),
       ),

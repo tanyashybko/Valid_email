@@ -15,5 +15,14 @@
   "invalidPhoneMessage": "Invalid phone number",
   "mustContainPlusSign": "Phone number must contain \"+\"",
   "tooLongNumber": "Phone number is too long",
-  "tooShortNumber": "Phone number is too short"
+  "tooShortNumber": "Phone number is too short",
+
+  "layoutTitle": "Два макета",
+  "largeSmallTitle": "Третий макет",
+  "firstWidget": "Первый виджет",
+  "secondWidget": "Второй виджет",
+  "thirdWidget": "1:1234567890\n2:1234567890",
+  "fourthWidget": "Четвёртый виджет",
+  "layoutPage": "Открыть вторую страницу",
+  "layoutThirdPage": "Открыть третью страницу"
 }
