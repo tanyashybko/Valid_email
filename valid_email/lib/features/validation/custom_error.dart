@@ -14,3 +14,5 @@ class PhoneShortNumber extends MyPhoneError {}
 
 class InvalidCharacters extends CustomError{}
 
+
+class TestUnexpectedError extends CustomError {}
