@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   email_validator: ^2.1.17
   provider: ^6.1.2
+  mocktail: ^1.0.4
 
   cupertino_icons: ^1.0.6
 
