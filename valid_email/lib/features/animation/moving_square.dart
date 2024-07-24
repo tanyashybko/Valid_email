@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class MovingSquareController {
   late AnimationController controller;
@@ -11,7 +12,7 @@ class MovingSquareController {
       vsync: vsync,
     )..repeat();
 
-    rotationAnimation = Tween<double>(begin: 0, end: 2 * 3.14159).animate(
+    rotationAnimation = Tween<double>(begin: 0, end: 2 * math.pi).animate(
       CurvedAnimation(parent: controller, curve: Curves.linear),
     );
 

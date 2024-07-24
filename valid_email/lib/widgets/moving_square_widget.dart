@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 import '../features/animation/moving_square.dart';
 
 class MovingSquareWidget extends StatefulWidget {
@@ -29,18 +30,25 @@ class _MovingSquareWidgetState extends State<MovingSquareWidget>
     return AnimatedBuilder(
       animation: _movingSquareController.controller,
       builder: (context, child) {
+        double height = MediaQuery.of(context).size.height;
+        double squareSize = 100.0;
+        double position = (math.sin(_movingSquareController.controller.value * 2 * math.pi) + 1) / 2;
+
         return Stack(
           children: [
             Positioned(
-              top: _movingSquareController.positionAnimation.value *
-                  (MediaQuery.of(context).size.height - 100),
-              left: MediaQuery.of(context).size.width / 2 - 50,
+              top: position * (height - squareSize),
+              left: MediaQuery.of(context).size.width / 2 - squareSize / 2,
               child: Transform.rotate(
                 angle: _movingSquareController.rotationAnimation.value,
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.blue,
+                child: const DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.purple,
+                  ),
+                  child: SizedBox(
+                    width: 100,
+                    height: 100,
+                  ),
                 ),
               ),
             ),
