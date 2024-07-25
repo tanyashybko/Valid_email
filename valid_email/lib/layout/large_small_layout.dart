@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:valid_email/l10n/l10n.dart';
 import '../localization/language_switcher.dart';
-import '../widgets/custom_layout_widget.dart';
+import '../widgets/layout/custom_layout_widget.dart';
 
 class LargeSmallLayout extends StatelessWidget {
   const LargeSmallLayout({super.key});

@@ -32,8 +32,16 @@
   "layoutFourthPage": "Открыть четвёртую страницу",
   "layoutFifthPage": "Открыть пятую страницу",
   "layoutSixthPage": "Открыть шестую страницу",
+  "layoutSeventhPage": "Открыть седьмую страницу",
+  "layoutEighthPage": "Открыть восьмую страницу",
 
   "stopButton": "Стоп",
   "resetButton": "Заново",
-  "startButton": "Начать"
+  "startButton": "Начать",
+
+  "animatedText": "Анимированный текст",
+  "flipCard": "Это переворачивающаяся карта",
+  "helloFlutter": "Привет Flutter",
+  "flipCardTitle": "Переворачивающаяся карта",
+  "flipCardError": "Не удалось загрузить изображение"
 }

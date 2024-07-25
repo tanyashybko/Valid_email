@@ -32,8 +32,16 @@
   "layoutFourthPage": "Open the fourth page",
   "layoutFifthPage": "Open the fifth page",
   "layoutSixthPage": "Open the sixth page",
+  "layoutSeventhPage": "Open the seventh page",
+  "layoutEighthPage": "Open the eighth page",
 
   "stopButton": "Stop",
   "resetButton": "Reset",
-  "startButton": "Start"
+  "startButton": "Start",
+
+  "animatedText": "Animated text",
+  "flipCard": "This is a flip card",
+  "helloFlutter": "Hello Flutter",
+  "flipCardTitle": "Flip card",
+  "flipCardError": "Failed to load image"
 }
