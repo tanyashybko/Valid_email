@@ -32,4 +32,4 @@ flutter:
   generate: true
 
   assets:
-    - assets/images/cat.png
+    - assets/images/
