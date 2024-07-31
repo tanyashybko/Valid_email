@@ -1,44 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/physics.dart';
 
-class BouncingController {
-  Offset _widgetPosition = const Offset(100, 100);
-  Offset _anchorPosition = const Offset(550, 275);
-  late final AnimationController controller;
-  late final Animation<Offset> animation;
+const double mass = 1.0;
+const double stiffness = 100.0;
+const double damping = 10.0;
+const int animationDuration = 2000; // milliseconds
 
-  BouncingController({required TickerProvider vsync}) {
-    controller = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 1000));
-    _updateAnimation();
-  }
+class BouncingController extends ChangeNotifier {
+  late AnimationController _controller;
+  late SpringSimulation _xSimulation;
+  late SpringSimulation _ySimulation;
 
-  Offset get widgetPosition => _widgetPosition;
-  Offset get anchorPosition => _anchorPosition;
+  Offset _position = Offset.zero;
+  Offset get position => _position;
 
-  set anchorPosition(Offset position) {
-    _anchorPosition = position;
-    _updateAnimation();
-    runSpringAnimation();
-  }
-
-  void _updateAnimation() {
-    animation = Tween<Offset>(
-      begin: _widgetPosition,
-      end: _anchorPosition,
-    ).animate(CurvedAnimation(
-      parent: controller,
-      curve: Curves.bounceOut,
-    ));
-  }
-
-  void runSpringAnimation() {
-    controller
-      ..reset()
-      ..forward().then((_) {
-        _widgetPosition = _anchorPosition;
+  BouncingController(TickerProvider vsync) {
+    _controller = AnimationController(vsync: vsync)
+      ..addListener(_onTick)
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          _controller.reset();
+        }
       });
   }
 
+  void _onTick() {
+    _position = Offset(
+      _xSimulation.x(_controller.value),
+      _ySimulation.x(_controller.value),
+    );
+    notifyListeners();
+  }
+
+  void startBouncing(Offset startPosition, Offset anchor) {
+    _position = startPosition;
+
+    const spring = SpringDescription(
+      mass: mass,
+      stiffness: stiffness,
+      damping: damping,
+    );
+
+    _xSimulation = SpringSimulation(
+      spring,
+      startPosition.dx,
+      anchor.dx,
+      0,
+    );
+
+    _ySimulation = SpringSimulation(
+      spring,
+      startPosition.dy,
+      anchor.dy,
+      0,
+    );
+
+    _controller.duration = const Duration(milliseconds: animationDuration);
+    _controller.forward(from: 0);
+  }
+
+  @override
   void dispose() {
-    controller.dispose();
+    _controller.dispose();
+    super.dispose();
   }
 }
