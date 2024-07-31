@@ -6,6 +6,7 @@ import 'package:valid_email/localization/locale_provider.dart';
 import 'package:valid_email/widgets/animation/animated%20text/animated_text_widget.dart';
 import 'package:valid_email/widgets/animation/bounce/bouncing_widget.dart';
 import 'package:valid_email/widgets/animation/flip%20card/flip_card_list_widget.dart';
+import 'package:valid_email/widgets/license/license_widget.dart';
 import 'package:valid_email/widgets/timer/countdown_timer_widget.dart';
 import 'package:valid_email/widgets/input_example_screen.dart';
 import 'package:valid_email/widgets/animation/moving%20square/moving_square_widget.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
               '/seventh': (context) => const AnimatedTextWidget(),
               '/eighth': (context) => const FlipCardListWidget(),
               '/ninth': (context) => const BouncingWidget(),
+              '/tenth': (context) => const LicenseWidget(),
             },
           );
         },

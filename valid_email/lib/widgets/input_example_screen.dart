@@ -82,6 +82,13 @@ class InputExampleScreen extends StatelessWidget {
                 },
                 child: Text(l10n.layoutNinthPage),
               ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/tenth');
+                },
+                child: Text(l10n.layoutTenthPage),
+              ),
             ],
           ),
         ),

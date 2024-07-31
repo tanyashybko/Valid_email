@@ -35,6 +35,7 @@
   "layoutSeventhPage": "Open the seventh page",
   "layoutEighthPage": "Open the eighth page",
   "layoutNinthPage": "Open the ninth page",
+  "layoutTenthPage": "List of license",
 
   "stopButton": "Stop",
   "resetButton": "Reset",
@@ -44,5 +45,8 @@
   "flipCard": "This is a flip card",
   "helloFlutter": "Hello Flutter",
   "flipCardTitle": "Flip card",
-  "flipCardError": "Failed to load image"
+  "flipCardError": "Failed to load image",
+
+  "licenseTitle": "Licenses",
+  "licenseError": "Error"
 }

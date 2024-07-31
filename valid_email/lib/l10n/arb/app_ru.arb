@@ -35,6 +35,7 @@
   "layoutSeventhPage": "Открыть седьмую страницу",
   "layoutEighthPage": "Открыть восьмую страницу",
   "layoutNinthPage": "Открыть девятую страницу",
+  "layoutTenthPage": "Список лизенций",
 
   "stopButton": "Стоп",
   "resetButton": "Заново",
@@ -44,5 +45,8 @@
   "flipCard": "Это переворачивающаяся карта",
   "helloFlutter": "Привет Flutter",
   "flipCardTitle": "Переворачивающаяся карта",
-  "flipCardError": "Не удалось загрузить изображение"
+  "flipCardError": "Не удалось загрузить изображение",
+
+  "licenseTitle": "Лицензии",
+  "licenseError": "Ошибка"
 }
