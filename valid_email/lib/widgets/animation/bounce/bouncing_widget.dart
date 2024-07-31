@@ -21,7 +21,7 @@ class _BouncingWidgetState extends State<BouncingWidget> with SingleTickerProvid
   void initState() {
     super.initState();
     _bouncingController = BouncingController(this);
-    _bouncingController.startBouncing(_anchor, _anchor);
+    _bouncingController.startBouncing(_anchor, _anchor); // Start with the blue circle at the anchor
   }
 
   @override

@@ -19,10 +19,13 @@ class BouncingController extends ChangeNotifier {
       ..addListener(_onTick)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
-          _controller.reset();
+          _position = _endPosition;
+          notifyListeners();
         }
       });
   }
+
+  late Offset _endPosition;
 
   void _onTick() {
     _position = Offset(
@@ -34,8 +37,9 @@ class BouncingController extends ChangeNotifier {
 
   void startBouncing(Offset startPosition, Offset anchor) {
     _position = startPosition;
+    _endPosition = anchor;
 
-    const spring = SpringDescription(
+    const spring =  SpringDescription(
       mass: mass,
       stiffness: stiffness,
       damping: damping,
