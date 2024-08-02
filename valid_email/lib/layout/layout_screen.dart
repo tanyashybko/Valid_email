@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:valid_email/l10n/l10n.dart';
 import '../localization/language_switcher.dart';
-import 'first_layout.dart';
-import 'second_layout.dart';
+import 'simple layouts/first_layout.dart';
+import 'simple layouts/second_layout.dart';
 
 class LayoutScreen extends StatelessWidget {
   const LayoutScreen({super.key});
