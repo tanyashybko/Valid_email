@@ -17,11 +17,23 @@ class SliverLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final groupedItems = _groupItemsByHeader(items);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sticky Headers'),
       ),
-      body: SliverWidget(items: items),
+      body: SliverWidget(items: groupedItems),
     );
+  }
+
+  List<Group> _groupItemsByHeader(List<Item> items) {
+    Map<String, List<Item>> groupedItems = {};
+    for (var item in items) {
+      groupedItems.putIfAbsent(item.header, () => []).add(item);
+    }
+    return groupedItems.entries
+        .map((entry) => Group(header: entry.key, items: entry.value))
+        .toList();
   }
 }
