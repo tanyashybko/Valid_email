@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:valid_email/l10n/l10n.dart';
-import 'package:valid_email/widgets/validation/phone_valid_widget.dart';
-import 'package:valid_email/widgets/validation/email_valid_widget.dart';
+import 'package:valid_email/widgets/validation/form_valid_widget.dart';
+//import 'package:valid_email/widgets/validation/phone_valid_widget.dart';
+//import 'package:valid_email/widgets/validation/email_valid_widget.dart';
 import '../localization/language_switcher.dart';
 
 class InputExampleScreen extends StatelessWidget {
@@ -23,10 +24,11 @@ class InputExampleScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const EmailValidWidget(),
-              const SizedBox(height: 20),
-              const PhoneValidWidget(),
-              const SizedBox(height: 20),
+              // const EmailValidWidget(),
+              // const SizedBox(height: 20),
+              // const PhoneValidWidget(),
+              const FormValidWidget(),
+              const SizedBox(height: 60),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/second');

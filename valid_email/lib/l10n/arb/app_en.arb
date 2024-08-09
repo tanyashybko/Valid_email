@@ -49,5 +49,11 @@
   "flipCardError": "Failed to load image",
 
   "licenseTitle": "Licenses",
-  "licenseError": "Error"
+  "licenseError": "Error",
+
+  "formSuccess": "Form successfully submitted",
+  "emailLabel": "Enter email",
+  "phoneLabel": "Enter phone number",
+  "submitButton": "Submit"
+
 }

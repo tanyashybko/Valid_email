@@ -49,5 +49,10 @@
   "flipCardError": "Не удалось загрузить изображение",
 
   "licenseTitle": "Лицензии",
-  "licenseError": "Ошибка"
+  "licenseError": "Ошибка",
+
+  "formSuccess": "Форма успешно отправлена",
+  "emailLabel" : "Введите email",
+  "phoneLabel": "Введите номер телефона",
+  "submitButton" : "Отправить"
 }
